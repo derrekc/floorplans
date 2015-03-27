@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  label: MyString
+  sublabel: MyString
+  building_id: 
+
+two:
+  name: MyString
+  label: MyString
+  sublabel: MyString
+  building_id: 
