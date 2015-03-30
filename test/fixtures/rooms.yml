@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  room_number: MyString
+  label: MyString
+  sublabel: MyString
+  floorplan_id: 
+  naming_opportunity: false
+  nameable: false
+  dollar_amount: 1
+  pending_sale: false
+  carrel: false
+
+two:
+  name: MyString
+  room_number: MyString
+  label: MyString
+  sublabel: MyString
+  floorplan_id: 
+  naming_opportunity: false
+  nameable: false
+  dollar_amount: 1
+  pending_sale: false
+  carrel: false

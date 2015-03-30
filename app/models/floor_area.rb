@@ -1,10 +1,13 @@
 class FloorArea < ActiveRecord::Base
   belongs_to :floorplan
 	scope :poly, -> { where(shape: 'poly') }
-	scope :active, -> {
-		joins(:floorplans).
-		where("floorplans.active = ?", 1)
+
+	# Scopes for the various floors
+	scope :at_floor, -> floor_label {
+		joins(:floorplan).
+		where("floorplans.label = ?", floor_label)
 	}
+
 	after_initialize :init
 
 	def init

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150327162249) do
+ActiveRecord::Schema.define(version: 20150327174441) do
 
   create_table "buildings", force: :cascade do |t|
     t.string   "name",        limit: 35
@@ -42,6 +42,24 @@ ActiveRecord::Schema.define(version: 20150327162249) do
 
   add_index "floorplans", ["building_id"], name: "index_floorplans_on_building_id", using: :btree
 
+  create_table "rooms", force: :cascade do |t|
+    t.string   "name",               limit: 255
+    t.string   "room_number",        limit: 255
+    t.string   "label",              limit: 255
+    t.string   "sublabel",           limit: 255
+    t.integer  "floorplan_id",       limit: 4
+    t.boolean  "naming_opportunity", limit: 1
+    t.boolean  "nameable",           limit: 1
+    t.integer  "dollar_amount",      limit: 4
+    t.boolean  "pending_sale",       limit: 1
+    t.boolean  "carrel",             limit: 1
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
+
+  add_index "rooms", ["floorplan_id"], name: "index_rooms_on_floorplan_id", using: :btree
+
   add_foreign_key "floor_areas", "floorplans"
   add_foreign_key "floorplans", "buildings"
+  add_foreign_key "rooms", "floorplans"
 end
